@@ -55,3 +55,4 @@ python manage.py runserver
 Для доступа к API необходимо получить токен:
 
 Нужно выполнить POST-запрос http://127.0.0.1:8000/api/v1/jwt/create/ передав поля username и password. API вернет JWT-токен
+

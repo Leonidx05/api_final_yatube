@@ -3,9 +3,11 @@ from django.db import models
 
 User = get_user_model()
 
+MAX_LENGTH = 200
+
 
 class Group(models.Model):
-    title = models.CharField(max_length=200)
+    title = models.CharField(MAX_LENGTH)
     slug = models.SlugField(unique=True)
     description = models.TextField()
 
@@ -27,7 +29,7 @@ class Post(models.Model):
                               null=True,)
 
     def __str__(self):
-        return self.text
+        return self.text(max_length=50)
 
 
 class Comment(models.Model):
